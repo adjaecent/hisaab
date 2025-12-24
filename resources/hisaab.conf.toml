@@ -89,7 +89,9 @@ fnb = [
 "BACKER DEUTSCHLAND",
 "SWIGGY LIMITED",
 "BISTRO",
-"CHOTA SWAAD"
+"CHOTA SWAAD",
+"DOSA",
+"LUNCH"
 ]
 
 donations = [
@@ -190,7 +192,8 @@ household = [
 "DYSON",
 "EMBER",
 "EUREKA FORBES",
-"ATOMBERG"
+"ATOMBERG",
+"DTDC"
 ]
 
 salary-reimbursement = [
@@ -250,7 +253,8 @@ shopping = [
 "ANGRAKHAA",
 "MINIMALIST",
 "DAILYOBJECTS",
-"SAPNA"
+"SAPNA",
+"GADGET"
 ]
 
 credit-card = [
@@ -285,7 +289,8 @@ fitness = [
 "GYM",
 "RUNNING",
 "S AND S INTERBUILD",
-"PLAYO"
+"PLAYO",
+"NMSABLR"
 ]
 
 renovation = [
