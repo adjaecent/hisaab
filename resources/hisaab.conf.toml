@@ -91,7 +91,11 @@ fnb = [
 "BISTRO",
 "CHOTA SWAAD",
 "DOSA",
-"LUNCH"
+"LUNCH",
+"SMOOR",
+"KUURAKU",
+"DELI",
+"GOURMET"
 ]
 
 donations = [
@@ -132,7 +136,8 @@ subscriptions = [
 "SUPERMAVEN",
 "HOTSTAR",
 "STRAVA",
-"FASTMAIL"
+"FASTMAIL",
+"CLAUDE"
 ]
 
 pets = [
@@ -141,7 +146,9 @@ pets = [
 "CESSNA",
 "HUFT",
 "PETS",
-"PET"
+"PET",
+"MADHUSUDHANSRINIVASAN",
+"GOOFYTAILS"
 ]
 
 investments = [
@@ -254,7 +261,11 @@ shopping = [
 "MINIMALIST",
 "DAILYOBJECTS",
 "SAPNA",
-"GADGET"
+"GADGET",
+"LEGO",
+"UNIQLO",
+"AMPLE TECH",
+"GYFTR"
 ]
 
 credit-card = [
@@ -281,7 +292,10 @@ travel = [
 "AIR INDIA",
 "GARDENIA",
 "THOMAS COOK",
-"AKSHAY GUPTA-NIYO8553427344"
+"AKSHAY GUPTA-NIYO8553427344",
+"BLUE BAY LODGE",
+"GLOBALESIM",
+"AIRBNB"
 ]
 
 fitness = [
