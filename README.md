@@ -1,4 +1,4 @@
-# hisaab-clj
+# hisaab
 _hisāba (हिसाब) means "to account for" in Hindi._
 
 A [Babashka](https://babashka.org) script to parse and generate reports from HDFC bank and credit card statements.
@@ -54,6 +54,3 @@ $ make hdfc-cc FILE=<path-to-file>.csv
 | subscriptions |   1200.00 |
 |        ...    |       ... |
 ```
-
-- Add durability for generated reports (database, files etc.)
-- Add monthly comparisons for expenditures based on stored data
