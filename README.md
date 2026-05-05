@@ -1,7 +1,7 @@
 # hisaab
 _hisāba (हिसाब) means "to account for" in Hindi._
 
-A [Babashka](https://babashka.org) script to parse and generate reports from HDFC bank and credit card statements.
+A [Babashka](https://babashka.org) script to parse and generate reports from HDFC bank and credit card statements. Structured so that parsers for other banks can be added under their own namespaces.
 
 ## Setup
 
