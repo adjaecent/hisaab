@@ -1,75 +1,59 @@
 # hisaab-clj
+_hisāba (हिसाब) means "to account for" in Hindi._
 
-हिसाब in Hindi means account.
+A [Babashka](https://babashka.org) script to parse and generate reports from HDFC bank and credit card statements.
 
-This is a clj script to parse and create reports from HDFC cc/bank statements.
+## Setup
 
-## How to use
-
-Download delimited bank statements from hdfc and generate reports from them using `process` function in `hdfc.*` namspace.
-
-```
-;; Example usage and output
-;; This requires the 'delimited' version of a bank statement.
-(hdfc.bank-statement/process "<absolute-path-to-file>.txt")
-
-{:totals
- {:withdrawls 125067.0,
-  :deposits 6683.0,
-  :expenditure 118384.0,
-  :closing-balance 37404},
- :group-totals
- {:transport {:debit 1623, :credit 0},
-  :f&b {:debit 60, :credit 0},
-  :untagged {:debit 466848, :credit 590556},
-  :donations {:debit 0, :credit 0},
-  :groceries {:debit 5351, :credit 0},
-  :subscriptions {:debit 0, :credit 21},
-  :investments {:debit 611034, :credit 94073},
-  :household {:debit 7971, :credit 0},
-  :medicines {:debit 0, :credit 0},
-  :shopping {:debit 5351, :credit 0}}}
-;; => nil
-```
-
-For credit card statements, go to the `credit-card-statement` namespace and use the `process` fn.
+Generate a config file (tweak it to add your own tags and filters):
 
 ```
-;; Example usage and output
-;; This requires a PDF version of the credit card statement.
-(hdfc.credit-card-statement/process "<absolute-path-to-file>.pdf")
-
-{:total-credits "INR60,016.00",
- :total-debits "INR46,096.63",
- :debit-breakdown
- {:f&b "INR18,831.00",
-  :untagged "INR538.63",
-  :shopping "INR20,681.00",
-  :groceries "INR397.00",
-  :subscriptions "INR5,649.00"}}
-;; => nil
+# symlinks resources/hisaab.conf.toml to $HOME/hisaab.conf.toml
+$ make confgen
 ```
 
-### CLI usage
+## CLI usage
+
+HDFC bank statement (requires the delimited `.txt` format):
 
 ```
-make hdfc-bank FILE=<absolute-file-path>
+$ make hdfc-bank FILE=<path-to-file>.txt
+
+==> Summary
+|                  :period | :withdrawls | :deposits | :expenditure | :closing-balance |
+|--------------------------+-------------+-----------+--------------+------------------|
+| 2024-01-01 to 2024-02-01 |     80000.0 |   40000.0 |      40000.0 |           120000 |
+
+==> Breakdown
+|       :category | :debit | :credit |    :net |
+|-----------------+--------+---------+---------|
+|     credit-card |  30000 |       0 |  -30000 |
+|       groceries |   4000 |       0 |   -4000 |
+|       household |  10000 |       0 |  -10000 |
+|     investments |  20000 |   15000 |   -5000 |
+|        untagged |  16000 |   25000 |    9000 |
+|           ...   |    ... |     ... |     ... |
 ```
 
-or
+HDFC credit card statement (requires the delimited `.csv` format):
 
 ```
-make hdfc-cc FILE=<absolute-file-path>
-```
+$ make hdfc-cc FILE=<path-to-file>.csv
 
-to generate a sample config (that can be tweaked),
+==> Summary
+|                  :period | :total-credits | :total-debits |
+|--------------------------+----------------+---------------|
+| 2024-01-16 to 2024-02-15 |       50000.00 |      65000.00 |
 
+==> Expenditure Breakdown
+|     :category |   :amount |
+|---------------+-----------|
+|           fnb |   8000.00 |
+|           tax |   5000.00 |
+|     transport |   3000.00 |
+| subscriptions |   1200.00 |
+|        ...    |       ... |
 ```
-# goes under $HOME/hisaab.conf.toml
-make confgen
-```
-
-## Future
 
 - Add durability for generated reports (database, files etc.)
 - Add monthly comparisons for expenditures based on stored data
