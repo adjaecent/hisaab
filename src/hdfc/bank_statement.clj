@@ -2,7 +2,9 @@
   (:require [clojure.set :as cset]
             [clojure.string :as s]
             [config :refer [conf]]
-            [sundry :refer :all]
+            [utils.sundry :refer :all]
+            [utils.date :refer :all]
+            [utils.sundry :refer [parse-rounded-float]]
             [clojure.pprint :refer [print-table]]))
 
 (def header-keys
@@ -157,7 +159,6 @@
                           tagged-data
                           tagged-totals)
         [from to]     (min-max-dates data)]
-    (def *dbg (tagged-data data))
     {:from from :to to :totals totals :tagged-totals tagged-totals}))
 
 (defn format-statement [data]

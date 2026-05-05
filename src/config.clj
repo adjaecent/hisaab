@@ -1,6 +1,6 @@
 (ns config
-  (:require [toml.core :as toml]
-            [sundry :as e]
+  (:require [utils.toml :as toml]
+            [utils.sundry :as e]
             [clojure.java.io :as io]))
 
 (def conf (atom {}))
@@ -24,7 +24,7 @@
      :credit ["FD PREMAT", "MUTUAL FUND", "MF", "NILENSO", "BDCP", "AUTO_REDE"]}}})
 
 (defn get! []
-  (if-let [data (e/nil-on-exceptions (-> file slurp (toml/read :keywordize)))]
+  (if-let [data (e/nil-on-exceptions (-> file slurp toml/parse))]
     (reset! conf data)
     (do
       (reset! conf defaults)

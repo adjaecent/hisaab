@@ -8,3 +8,4 @@
 .lsp/
 resources/*
 !resources/hisaab.conf.toml
+.claude/

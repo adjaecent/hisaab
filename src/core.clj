@@ -10,14 +10,14 @@
 
 (defn cli-parse [[type filename & _rest]]
   (case type
-    "cc"      (do (load-config!)
-                  (-> filename cc/process cc/format-statement)
-                  (println)
-                  (print "Finished generating the HDFC Credit Card Report!"))
-    "bank"    (do (load-config!)
-                  (-> filename bs/process bs/format-statement)
-                  (println)
-                  (print "Finished generating the HDFC Bank Statement Report!"))
+    "hdfc-cc"   (do (load-config!)
+                    (-> filename cc/process cc/format-statement)
+                    (println)
+                    (print "Finished generating the HDFC Credit Card Report!"))
+    "hdfc-bank" (do (load-config!)
+                    (-> filename bs/process bs/format-statement)
+                    (println)
+                    (print "Finished generating the HDFC Bank Statement Report!"))
     (print "Invalid statement type!")))
 
 (defn -main [& args]
