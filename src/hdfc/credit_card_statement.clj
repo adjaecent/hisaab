@@ -24,11 +24,17 @@
 
 (defn parse-csv [filename]
   (let [lines      (-> filename slurp s/split-lines)
-        header-idx (first (keep-indexed #(when (s/starts-with? %2 "Transaction type~|~") %1) lines))]
+        header-idx (first (keep-indexed #(when (s/starts-with? %2 "Transaction type~") %1) lines))
+        new-fmt?   (s/starts-with? (nth lines header-idx) "Transaction type~|~")
+        delimiter  (if new-fmt? #"~\|~" #"~")]
     (->> (drop (inc header-idx) lines)
          (take-while #(or (s/starts-with? % "Domestic")
                           (s/starts-with? % "International")))
-         (map #(s/split % #"~\|~")))))
+         (map #(s/split % delimiter))
+         (map (fn [[tx-type name date desc a b c]]
+                (if new-fmt?
+                  [tx-type name date desc a b c]
+                  [tx-type name date desc b c a]))))))
 
 (defn gen-statement [credits debits]
   (let [[from to] (min-max-dates (concat credits debits))]

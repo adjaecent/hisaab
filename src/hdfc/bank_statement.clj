@@ -4,7 +4,7 @@
             [config :refer [conf]]
             [utils.sundry :refer :all]
             [utils.date :refer :all]
-            [utils.sundry :refer [parse-rounded-float]]
+            [utils.money :as money]
             [clojure.pprint :refer [print-table]]))
 
 (def header-keys
@@ -168,13 +168,14 @@
         summary (merge period totals)
         tags (:tagged-totals data)
         rows (for [[tag {:keys [debit credit]}] tags]
-               {:category (name tag)
-                :debit (or debit 0)
-                :credit (or credit 0)
-                :net (- (or credit 0) (or debit 0))})]
+               (let [d (or debit 0) c (or credit 0)]
+                 {:category (name tag)
+                  :debit  (money/format-amount d)
+                  :credit (money/format-amount c)
+                  :net    (money/format-amount (- c d))}))]
     (println)
     (print "==> Summary")
-    (print-table (cons :period summary-keys) [summary])
+    (print-table (cons :period summary-keys) [(merge period (update-vals totals money/format-amount))])
     (println)
     (print "==> Breakdown")
     (print-table (keys (first rows)) (sort-by :category rows))))
