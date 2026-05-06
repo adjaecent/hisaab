@@ -17,7 +17,7 @@
   (:require [utils.sundry :refer [conjkw]]
             [clojure.math :refer [pow]]))
 
-(def ^:private pos (atom 0))
+(def ^:dynamic ^:private pos nil)
 
 (defn- curr [s] (get s @pos))
 (defn- adv! [] (swap! pos inc) nil)
@@ -144,13 +144,13 @@
 (defn parse
   "Parse a TOML string into a Clojure map."
   [s]
-  (reset! pos 0)
-  (loop [data {}
-         path []]
-    (skip-meta! s)
-    (if (end? s)
-      data
-      (if (= \[ (curr s))
-        (recur data (parse-standard-table s))
-        (let [[kv-path value] (parse-keyval s)]
-          (recur (assoc-in data (concat path kv-path) value) path))))))
+  (binding [pos (atom 0)]
+    (loop [data {}
+           path []]
+      (skip-meta! s)
+      (if (end? s)
+        data
+        (if (= \[ (curr s))
+          (recur data (parse-standard-table s))
+          (let [[kv-path value] (parse-keyval s)]
+            (recur (assoc-in data (concat path kv-path) value) path)))))))
