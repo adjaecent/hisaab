@@ -13,7 +13,8 @@ transport = [
 "SHOFFR",
 "BLU-SMART",
 "AKAR SERVICE STATION",
-"ADVAITH"
+"ADVAITH",
+"DHL EXPRESS"
 ]
 
 groceries = [
@@ -214,7 +215,8 @@ salary-reimbursement = [
 "USD315",
 "USD1685",
 "USD105.0",
-"INW"
+"INW",
+"3254"
 ]
 
 medicines = [
@@ -342,8 +344,10 @@ debit = [
 "ZERODHA",
 "RFX",
 "LIFE IN",
-"50200021339924",
-"SHRIRAM FINANCE"
+"9924",
+"SHRIRAM FINANCE",
+"NEW A/C-NIVEDITA PRIYADARSHINI",
+"3254"
 ]
 
 credit = [
