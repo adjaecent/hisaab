@@ -96,7 +96,12 @@ fnb = [
 "SMOOR",
 "KUURAKU",
 "DELI",
-"GOURMET"
+"GOURMET",
+"SWIGGY PVT LTD",
+"SWIGGY TECHNOLOGIE",
+"KAIDOOKIDS",
+"COCONUT GROVE",
+"BOMBAY BRASSERIE"
 ]
 
 donations = [
@@ -104,11 +109,16 @@ donations = [
 "MILAAP",
 "UNICEF",
 "FROM KITTY",
+"SUNITA MARIA VALNAIK",
 "VIPASSANA"
 ]
 
 tax = [
 "CBDT",
+"IGST",
+"FCY MARKU",
+"SGST",
+"CGST",
 "ITDTAX"
 ]
 
@@ -138,7 +148,10 @@ subscriptions = [
 "HOTSTAR",
 "STRAVA",
 "FASTMAIL",
-"CLAUDE"
+"CLAUDE",
+"HOSTBRR",
+"HETZNER",
+"FLY.IO"
 ]
 
 pets = [
@@ -232,6 +245,9 @@ medicines = [
 "MOSAIC WELLNESS",
 "MANIPAL HOSPITALS",
 "CHEMIST",
+"FAME BALAJI",
+"DRUGS",
+"OPTICALS",
 "PHARMA"
 ]
 
@@ -267,7 +283,9 @@ shopping = [
 "LEGO",
 "UNIQLO",
 "AMPLE TECH",
-"GYFTR"
+"GYFTR",
+"ASSPL",
+"ADITYA BIRLA FASHION"
 ]
 
 credit-card = [
@@ -297,6 +315,7 @@ travel = [
 "AKSHAY GUPTA-NIYO8553427344",
 "BLUE BAY LODGE",
 "GLOBALESIM",
+"UKVI",
 "AIRBNB"
 ]
 
@@ -306,7 +325,8 @@ fitness = [
 "RUNNING",
 "S AND S INTERBUILD",
 "PLAYO",
-"NMSABLR"
+"NMSABLR",
+"TECHMASH"
 ]
 
 renovation = [
@@ -322,6 +342,8 @@ renovation = [
 entertainment = [
 "PVR",
 "WASTELAND ENTERTAINMEN",
+"BOOKMYSHOW",
+"BIG TREE ENTERTAINMENT",
 "SKILLBOX"
 ]
 
