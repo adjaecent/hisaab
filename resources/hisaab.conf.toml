@@ -37,7 +37,8 @@ groceries = [
 "COSMIX",
 "AKSHAYAKALPA",
 "INSTAMART",
-"BLINKIT"
+"BLINKIT",
+"SUPER MARKET"
 ]
 
 fnb = [
@@ -162,7 +163,8 @@ pets = [
 "PETS",
 "PET",
 "MADHUSUDHANSRINIVASAN",
-"GOOFYTAILS"
+"GOOFYTAILS",
+"CATSITTING"
 ]
 
 investments = [
@@ -214,7 +216,10 @@ household = [
 "EMBER",
 "EUREKA FORBES",
 "ATOMBERG",
-"DTDC"
+"DTDC",
+"INDIAPOST",
+"GARDENER",
+"PRINT"
 ]
 
 salary-reimbursement = [
@@ -291,7 +296,7 @@ shopping = [
 credit-card = [
 "CC",
 "CRED",
-"IB BILLPAY DR-HDFC4U"
+"IB BILLPAY DR-HDFC"
 ]
 
 cash = [
@@ -352,7 +357,6 @@ debit = [
 "CLEARING",
 "LIC",
 "NEW FD",
-"CBDT",
 "BAJAJFINANCE",
 "BAJAJ FINANCE",
 "RELIANC",
